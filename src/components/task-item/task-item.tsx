@@ -38,6 +38,7 @@ export const TaskItem: React.FC<TaskItemProps> = props => {
   const textRef = useRef<SVGTextElement>(null);
   const [taskItem, setTaskItem] = useState<JSX.Element>(<div />);
   const [isTextInside, setIsTextInside] = useState(true);
+  const [displayText, setDisplayText] = useState(false);
 
   useEffect(() => {
     switch (task.typeInternal) {
@@ -60,6 +61,7 @@ export const TaskItem: React.FC<TaskItemProps> = props => {
     if (textRef.current) {
       setIsTextInside(textRef.current.getBBox().width < task.x2 - task.x1);
     }
+    setDisplayText(false)
   }, [textRef, task]);
 
   const getX = () => {
@@ -108,7 +110,7 @@ export const TaskItem: React.FC<TaskItemProps> = props => {
       }}
     >
       {taskItem}
-      <text
+      {displayText ?? <text
         x={getX()}
         y={task.y + taskHeight * 0.5}
         className={
@@ -119,7 +121,7 @@ export const TaskItem: React.FC<TaskItemProps> = props => {
         ref={textRef}
       >
         {task.name}
-      </text>
+      </text> }
     </g>
   );
 };
