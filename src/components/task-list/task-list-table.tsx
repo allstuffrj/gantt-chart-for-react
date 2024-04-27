@@ -15,10 +15,10 @@ const toLocaleDateStringFactory =
     return lds;
   };
 const dateTimeOptions: Intl.DateTimeFormatOptions = {
-  weekday: "short",
+  weekday: undefined,
   year: "numeric",
-  month: "long",
-  day: "numeric",
+  month: "short",
+  day: "2-digit",
 };
 
 export const TaskListTableDefault: React.FC<{
@@ -72,6 +72,7 @@ export const TaskListTableDefault: React.FC<{
               style={{
                 minWidth: rowWidth,
                 maxWidth: rowWidth,
+                fontWeight: (t.isChild) ? 'normal' : 'bold'
               }}
               title={t.name}
             >
@@ -80,7 +81,7 @@ export const TaskListTableDefault: React.FC<{
                   className={
                     expanderSymbol
                       ? styles.taskListExpander
-                      : styles.taskListEmptyExpander
+                      : (t.isChild) ? styles.taskListEmptyExpanderWithExtraPadding : styles.taskListEmptyExpander
                   }
                   onClick={() => onExpanderClick(t)}
                 >
@@ -94,6 +95,7 @@ export const TaskListTableDefault: React.FC<{
               style={{
                 minWidth: rowWidth,
                 maxWidth: rowWidth,
+                fontWeight: (t.isChild) ? 'normal' : 'bold'
               }}
             >
               &nbsp;{toLocaleDateString(t.start, dateTimeOptions)}
@@ -103,6 +105,7 @@ export const TaskListTableDefault: React.FC<{
               style={{
                 minWidth: rowWidth,
                 maxWidth: rowWidth,
+                fontWeight: (t.isChild) ? 'normal' : 'bold'
               }}
             >
               &nbsp;{toLocaleDateString(t.end, dateTimeOptions)}

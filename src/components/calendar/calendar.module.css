@@ -8,6 +8,7 @@
   user-select: none;
   pointer-events: none;
   text-align: center;
+  font-weight: bold;
 }
 
 .calendarTopTick {
@@ -23,6 +24,7 @@
   -ms-user-select: none;
   user-select: none;
   pointer-events: none;
+  font-weight: bold;
 }
 
 .calendarHeader {

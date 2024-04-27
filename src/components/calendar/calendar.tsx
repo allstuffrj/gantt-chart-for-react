@@ -168,7 +168,7 @@ export const Calendar: React.FC<CalendarProps> = ({
     const topValues: ReactChild[] = [];
     const bottomValues: ReactChild[] = [];
     let weeksCount: number = 1;
-    const topDefaultHeight = headerHeight * 0.5;
+    const topDefaultHeight = headerHeight * 1.25;
     const dates = dateSetup.dates;
     
     for (let i = dates.length - 1; i >= 0; i--) {
@@ -188,6 +188,7 @@ export const Calendar: React.FC<CalendarProps> = ({
         nextDay.setDate(nextDay.getDate() + k);
         datesArray.push(("0" + nextDay.getDate()).slice(-2))
       }
+
       bottomValues.push(
         <text
           key={date.getTime()}
@@ -197,14 +198,15 @@ export const Calendar: React.FC<CalendarProps> = ({
         > {bottomValue} 
         
         
-        <tspan x={columnWidth * (i + +rtl) + 10 } y={headerHeight * 0.8 + 30}>{datesArray[0]}</tspan>
+          <tspan x={columnWidth * (i + +rtl) + 10 } y={headerHeight * 0.8 + 30}>{datesArray[0]}</tspan>
         <tspan x={columnWidth * (i + +rtl) + 40 } y={headerHeight * 0.8 + 30}>{datesArray[1]}</tspan>
         <tspan x={columnWidth * (i + +rtl) + 70 } y={headerHeight * 0.8 + 30}>{datesArray[2]}</tspan>
         <tspan x={columnWidth * (i + +rtl) + 110 } y={headerHeight * 0.8 + 30}>{datesArray[3]}</tspan>
         <tspan x={columnWidth * (i + +rtl) + 140 } y={headerHeight * 0.8 + 30}>{datesArray[4]}</tspan>
         <tspan x={columnWidth * (i + +rtl) + 170 } y={headerHeight * 0.8 + 30}>{datesArray[5]}</tspan>
         <tspan x={columnWidth * (i + +rtl) + 210 } y={headerHeight * 0.8 + 30}>{datesArray[6]}</tspan>
-        </text>
+        
+        </text>  
       );
 
       if (topValue) {
@@ -218,7 +220,7 @@ export const Calendar: React.FC<CalendarProps> = ({
               y1Line={0}
               y2Line={topDefaultHeight}
               xText={columnWidth * i + columnWidth * weeksCount * 0.5}
-              yText={topDefaultHeight * 0.9}
+              yText={topDefaultHeight * 0.3}
             />
           );
         }

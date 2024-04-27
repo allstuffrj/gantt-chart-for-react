@@ -28,6 +28,7 @@ export function initTasks() {
       type: "task",
       project: "ProjectSample",
       displayOrder: 2,
+      isChild: true
     },
     {
       start: new Date(currentDate.getFullYear(), currentDate.getMonth(), 2),
@@ -39,6 +40,7 @@ export function initTasks() {
       type: "task",
       project: "ProjectSample",
       displayOrder: 3,
+      isChild: true
     },
     {
       start: new Date(currentDate.getFullYear(), currentDate.getMonth(), 4),
@@ -50,6 +52,7 @@ export function initTasks() {
       type: "task",
       project: "ProjectSample",
       displayOrder: 4,
+      isChild: true
     },
     {
       start: new Date(currentDate.getFullYear(), currentDate.getMonth(), 8),
@@ -61,6 +64,7 @@ export function initTasks() {
       type: "task",
       project: "ProjectSample",
       displayOrder: 5,
+      isChild: true
     },
     {
       start: new Date(currentDate.getFullYear(), currentDate.getMonth(), 8),
@@ -72,6 +76,7 @@ export function initTasks() {
       dependencies: ["Task 2"],
       project: "ProjectSample",
       displayOrder: 6,
+      isChild: true
     },
     {
       start: new Date(currentDate.getFullYear(), currentDate.getMonth(), 15),
@@ -83,6 +88,7 @@ export function initTasks() {
       dependencies: ["Task 4"],
       project: "ProjectSample",
       displayOrder: 7,
+      isChild: true
     },
     {
       start: new Date(currentDate.getFullYear(), currentDate.getMonth(), 18),

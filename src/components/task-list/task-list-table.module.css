@@ -33,6 +33,11 @@
 }
 .taskListEmptyExpander {
   font-size: 0.6rem;
-  padding-left: 1rem;
+  padding-left: 20px;
+  user-select: none;
+}
+.taskListEmptyExpanderWithExtraPadding {
+  font-size: 0.6rem;
+  padding-left: 35px;
   user-select: none;
 }
