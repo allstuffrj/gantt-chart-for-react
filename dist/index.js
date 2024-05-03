@@ -281,7 +281,7 @@ var TaskListHeaderDefault = function TaskListHeaderDefault(_ref) {
   }, "\xA0End Date")));
 };
 
-var styles$1 = {"taskListWrapper":"_3ZbQT","taskListTableRow":"_34SS0","taskListCell":"_3lLk3","taskListNameWrapper":"_nI1Xw","taskListExpander":"_2QjE6","taskListEmptyExpander":"_2TfEi","taskListEmptyExpanderWithExtraPadding":"_1Rtdr"};
+var styles$1 = {"taskListWrapper":"_3ZbQT","taskListTableRow":"_34SS0","taskListCell":"_3lLk3","taskListNameWrapper":"_nI1Xw","taskListExpander":"_2QjE6","taskListEmptyExpander":"_2TfEi","taskListEmptyExpanderWithExtraPadding":"_1Rtdr","taskListEmptyExpanderGrandChild":"_16No_"};
 
 var localeDateStringCache = {};
 
@@ -342,13 +342,13 @@ var TaskListTableDefault = function TaskListTableDefault(_ref) {
       style: {
         minWidth: rowWidth,
         maxWidth: rowWidth,
-        fontWeight: t.isChild ? 'normal' : 'bold'
+        fontWeight: t.isChild || t.isGrandChild ? 'normal' : 'bold'
       },
       title: t.name
     }, React__default.createElement("div", {
       className: styles$1.taskListNameWrapper
     }, React__default.createElement("div", {
-      className: expanderSymbol ? styles$1.taskListExpander : t.isChild ? styles$1.taskListEmptyExpanderWithExtraPadding : styles$1.taskListEmptyExpander,
+      className: expanderSymbol ? styles$1.taskListExpander : t.isChild ? styles$1.taskListEmptyExpanderWithExtraPadding : t.isGrandChild ? styles$1.taskListEmptyExpanderGrandChild : styles$1.taskListEmptyExpander,
       onClick: function onClick() {
         return onExpanderClick(t);
       }
@@ -357,14 +357,14 @@ var TaskListTableDefault = function TaskListTableDefault(_ref) {
       style: {
         minWidth: rowWidth,
         maxWidth: rowWidth,
-        fontWeight: t.isChild ? 'normal' : 'bold'
+        fontWeight: t.isChild || t.isGrandChild ? 'normal' : 'bold'
       }
     }, "\xA0", toLocaleDateString(t.start, dateTimeOptions)), React__default.createElement("div", {
       className: styles$1.taskListCell,
       style: {
         minWidth: rowWidth,
         maxWidth: rowWidth,
-        fontWeight: t.isChild ? 'normal' : 'bold'
+        fontWeight: t.isChild || t.isGrandChild ? 'normal' : 'bold'
       }
     }, "\xA0", toLocaleDateString(t.end, dateTimeOptions)));
   }));
