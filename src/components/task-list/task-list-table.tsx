@@ -72,7 +72,7 @@ export const TaskListTableDefault: React.FC<{
               style={{
                 minWidth: rowWidth,
                 maxWidth: rowWidth,
-                fontWeight: (t.isChild) ? 'normal' : 'bold'
+                fontWeight: (t.isChild || t.isGrandChild) ? 'normal' : 'bold'
               }}
               title={t.name}
             >
@@ -81,7 +81,7 @@ export const TaskListTableDefault: React.FC<{
                   className={
                     expanderSymbol
                       ? styles.taskListExpander
-                      : (t.isChild) ? styles.taskListEmptyExpanderWithExtraPadding : styles.taskListEmptyExpander
+                      : (t.isChild ) ? styles.taskListEmptyExpanderWithExtraPadding : (t.isGrandChild ? styles.taskListEmptyExpanderGrandChild : styles.taskListEmptyExpander)
                   }
                   onClick={() => onExpanderClick(t)}
                 >
@@ -95,7 +95,7 @@ export const TaskListTableDefault: React.FC<{
               style={{
                 minWidth: rowWidth,
                 maxWidth: rowWidth,
-                fontWeight: (t.isChild) ? 'normal' : 'bold'
+                fontWeight: (t.isChild || t.isGrandChild) ? 'normal' : 'bold'
               }}
             >
               &nbsp;{toLocaleDateString(t.start, dateTimeOptions)}
@@ -105,7 +105,7 @@ export const TaskListTableDefault: React.FC<{
               style={{
                 minWidth: rowWidth,
                 maxWidth: rowWidth,
-                fontWeight: (t.isChild) ? 'normal' : 'bold'
+                fontWeight: (t.isChild || t.isGrandChild) ? 'normal' : 'bold'
               }}
             >
               &nbsp;{toLocaleDateString(t.end, dateTimeOptions)}

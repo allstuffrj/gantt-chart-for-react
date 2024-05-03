@@ -32,6 +32,7 @@ export interface Task {
   hideChildren?: boolean;
   displayOrder?: number;
   isChild?: boolean;
+  isGrandChild?: boolean;
 }
 
 export interface EventOption {

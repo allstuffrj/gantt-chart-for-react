@@ -41,3 +41,9 @@
   padding-left: 35px;
   user-select: none;
 }
+
+.taskListEmptyExpanderGrandChild {
+  font-size: 0.6rem;
+  padding-left: 55px;
+  user-select: none;
+}
