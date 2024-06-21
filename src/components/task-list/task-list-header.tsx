@@ -33,7 +33,8 @@ export const TaskListHeaderDefault: React.FC<{
         <div
           className={styles.ganttTable_HeaderItem}
           style={{
-            minWidth: rowWidth,
+            minWidth: "100px",
+            maxWidth: "100px",
           }}
         >
           &nbsp;Start Date
@@ -42,7 +43,8 @@ export const TaskListHeaderDefault: React.FC<{
         <div
           className={styles.ganttTable_HeaderItem}
           style={{
-            minWidth: rowWidth,
+            minWidth: "100px",
+            maxWidth: "100px"
           }}
         >
           &nbsp;End Date

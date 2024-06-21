@@ -270,12 +270,14 @@ var TaskListHeaderDefault = function TaskListHeaderDefault(_ref) {
   }, "\xA0Tasks"), React.createElement("div", {
     className: styles.ganttTable_HeaderItem,
     style: {
-      minWidth: rowWidth
+      minWidth: "100px",
+      maxWidth: "100px"
     }
   }, "\xA0Start Date"), React.createElement("div", {
     className: styles.ganttTable_HeaderItem,
     style: {
-      minWidth: rowWidth
+      minWidth: "100px",
+      maxWidth: "100px"
     }
   }, "\xA0End Date")));
 };
@@ -354,15 +356,15 @@ var TaskListTableDefault = function TaskListTableDefault(_ref) {
     }, expanderSymbol), React.createElement("div", null, t.name))), React.createElement("div", {
       className: styles$1.taskListCell,
       style: {
-        minWidth: rowWidth,
-        maxWidth: rowWidth,
+        minWidth: "100px",
+        maxWidth: "100px",
         fontWeight: t.isChild || t.isGrandChild ? 'normal' : 'bold'
       }
     }, "\xA0", toLocaleDateString(t.start, dateTimeOptions)), React.createElement("div", {
       className: styles$1.taskListCell,
       style: {
-        minWidth: rowWidth,
-        maxWidth: rowWidth,
+        minWidth: "100px",
+        maxWidth: "100px",
         fontWeight: t.isChild || t.isGrandChild ? 'normal' : 'bold'
       }
     }, "\xA0", toLocaleDateString(t.end, dateTimeOptions)));

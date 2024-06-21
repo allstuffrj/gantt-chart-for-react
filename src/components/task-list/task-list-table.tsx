@@ -93,8 +93,8 @@ export const TaskListTableDefault: React.FC<{
             <div
               className={styles.taskListCell}
               style={{
-                minWidth: rowWidth,
-                maxWidth: rowWidth,
+                minWidth: "100px",
+                maxWidth: "100px",
                 fontWeight: (t.isChild || t.isGrandChild) ? 'normal' : 'bold'
               }}
             >
@@ -103,8 +103,8 @@ export const TaskListTableDefault: React.FC<{
             <div
               className={styles.taskListCell}
               style={{
-                minWidth: rowWidth,
-                maxWidth: rowWidth,
+                minWidth: "100px",
+                maxWidth: "100px",
                 fontWeight: (t.isChild || t.isGrandChild) ? 'normal' : 'bold'
               }}
             >
